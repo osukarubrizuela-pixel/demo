@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Dimelo - Apoyo Psicológico Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brown-dark: #68482A;
+            --beige-warm: #BE9563;
+            --orange-toasted: #BE8A5D;
+            --brown-medium: #71583D;
+            --olive-green: #556E4A;
+            --light: #f9f6f2;
+            --white: #FFFFFF;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--brown-dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--brown-dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--orange-toasted);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--orange-toasted);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #a8744c;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(190, 138, 93, 0.25);
+        }
+
+        .btn-secondary {
+            background: var(--olive-green);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: #48603d;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(85, 110, 74, 0.2);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 12px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--brown-dark);
+        }
+
+        .logo span {
+            color: var(--orange-toasted);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--brown-dark);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange-toasted);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--orange-toasted);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--brown-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(104, 72, 42, 0.9) 0%, rgba(113, 88, 61, 0.95) 100%), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding-top: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Waves Animation */
+        .waves-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat-x;
+            background-size: 50% 100%;
+            z-index: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Ola 1 - Fondo */
+        .wave1 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,100 C300,0 900,200 1200,100 V200 H0 Z" fill="%2368482A" opacity="0.3"/></svg>');
+            animation: wave-animation-1 25s linear infinite;
+            height: 180px;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        /* Ola 2 - Medio */
+        .wave2 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,120 C150,20 450,220 600,120 C750,20 1050,220 1200,120 V200 H0 Z" fill="%2368482A" opacity="0.3"/></svg>');
+            animation: wave-animation-2 18s linear infinite reverse;
+            height: 140px;
+            bottom: 0px;
+            z-index: 0;
+        }
+
+        /* Ola 3 - Frente */
+        .wave3 {
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,150 C100,50 300,250 400,150 C500,50 700,250 800,150 C900,50 1100,250 1200,150 V200 H0 Z" fill="%23BE9563" opacity="0.7"/></svg>');
+            animation: wave-animation-3 12s linear infinite;
+            height: 110px;
+            bottom: 0px;
+            z-index: 0;
+        }
+
+        @keyframes wave-animation-1 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes wave-animation-2 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes wave-animation-3 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Stats */
+        .stats {
+            background: var(--brown-medium);
+            color: var(--white);
+            padding: 4rem 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--beige-warm);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Services */
+        .services {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--orange-toasted);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            margin-bottom: 1rem;
+            color: var(--brown-dark);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(190, 149, 99, 0.1) 0%, rgba(190, 138, 93, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 700px;
+        }
+
+        .bouncing-balls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .ball {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 700px;
+            border-left: 4px solid var(--orange-toasted);
+            position: relative;
+            z-index: 10;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            color: var(--brown-dark);
+        }
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: """;
+            font-size: 5rem;
+            position: absolute;
+            opacity: 0.1;
+            font-family: 'Playfair Display', serif;
+            color: var(--brown-dark);
+        }
+
+        .testimonial-text:before {
+            top: -25px;
+            left: -15px;
+        }
+
+        .testimonial-text:after {
+            content: """;
+            bottom: -60px;
+            right: -15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 3px solid var(--orange-toasted);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--brown-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--brown-medium);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--brown-medium) 0%, var(--olive-green) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta h2:after {
+            background: var(--beige-warm);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brown-dark);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--beige-warm);
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--beige-warm);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .footer-links a:hover {
+            color: var(--beige-warm);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            margin-bottom: 1.2rem;
+            align-items: flex-start;
+            font-weight: 600;
+        }
+
+        .contact-info i {
+            color: var(--beige-warm);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--beige-warm);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                transition: var(--transition);
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .waves-container {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .waves-container {
+                height: 300px;
+            }
+            
+            .testimonials {
+                min-height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.imgur.com/7v5sZ1X.png" alt="Fundación Dimelo Logo">
+                <h1>Fundación <span>Dimelo</span></h1>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#" class="btn btn-primary">Solicitar Ayuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Apoyo Psicológico Cuando Más Lo Necesitas</h1>
+                <p>En Fundación Dimelo, te brindamos un espacio seguro, confidencial y profesional para hablar sobre lo que sientes. Nuestro equipo de psicólogos está listo para ayudarte en tu camino hacia el bienestar emocional.</p>
+                <div class="hero-btns">
+                    <a href="#servicios" class="btn btn-primary">Conoce Nuestros Servicios</a>
+                    <a href="#contacto" class="btn btn-secondary">Habla con un Especialista</a>
+                </div>
+            </div>
+        </div>
+        <div class="waves-container">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="1500">0</div>
+                <div class="stat-label">Personas Ayudadas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="25">0</div>
+                <div class="stat-label">Profesionales</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="12">0</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="98">0</div>
+                <div class="stat-label">% de Satisfacción</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Brindamos apoyo psicológico profesional adaptado a tus necesidades</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Terapia Individual</h3>
+                        <p>Sesiones personalizadas con psicólogos especializados que te ayudarán a superar desafíos emocionales y desarrollar herramientas para una vida plena.</p>
+                        <a href="#" class="btn btn-secondary">Más Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Grupos de Apoyo</h3>
+                        <p>Espacios seguros donde puedes compartir experiencias con personas que enfrentan situaciones similares, guiados por profesionales.</p>
+                        <a href="#" class="btn btn-secondary">Más Información</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Recursos Educativos</h3>
+                        <p>Acceso gratuito a materiales, guías y talleres diseñados para promover el bienestar emocional y la salud mental.</p>
+                        <a href="#" class="btn btn-secondary">Explorar Recursos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonios">
+        <div class="bouncing-balls">
+            <!-- Las pelotas se generan dinámicamente con JavaScript -->
+        </div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Historias de Esperanza</h2>
+                <p>Lo que dicen quienes han encontrado apoyo en nuestra fundación</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "La fundación me ayudó en el momento más difícil de mi vida. Gracias a la terapia y el apoyo recibido, hoy puedo manejar mi ansiedad y ver la vida con esperanza. Los profesionales son increíblemente comprensivos y expertos."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="María G.">
+                        </div>
+                        <div class="author-info">
+                            <h4>María G.</h4>
+                            <p>Paciente desde 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <div class="container">
+            <h2>¿Necesitas Ayuda?</h2>
+            <p>No estás solo. Nuestro equipo de profesionales está listo para escucharte y apoyarte en tu camino hacia el bienestar emocional. Toma el primer paso hoy.</p>
+            <a href="#" class="btn btn-primary">Habla con un Especialista</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="https://i.imgur.com/7v5sZ1X.png" alt="Fundación Dimelo Logo" style="height: 40px;">
+                        <h1 style="font-size: 1.8rem;">Fundación <span style="color: var(--orange-toasted);">Dimelo</span></h1>
+                    </div>
+                    <p style="margin-top: 1.5rem; opacity: 0.8; font-weight: 600;">Brindando apoyo psicológico accesible y profesional desde 2011.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terapia Individual</a></li>
+                        <li><a href="#">Terapia de Pareja</a></li>
+                        <li><a href="#">Grupos de Apoyo</a></li>
+                        <li><a href="#">Talleres</a></li>
+                        <li><a href="#">Recursos Educativos</a></li>
+                        <li><a href="#">Emergencias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Principal #123, Ciudad de México</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>(55) 1234-5678</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>ayuda@fundaciondimelo.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lunes a Viernes: 9am - 7pm<br>Sábados: 10am - 2pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fundación Dimelo. Todos los derechos reservados.</p>
+                <p>Organización sin fines de lucro registrada en México.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Stats counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const options = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const count = parseInt(target.getAttribute('data-count'));
+                    const duration = 2000;
+                    const increment = count / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= count) {
+                            clearInterval(timer);
+                            current = count;
+                        }
+                        target.textContent = Math.floor(current);
+                    }, 16);
+                    
+                    observer.unobserve(target);
+                }
+            });
+        }, options);
+        
+        statNumbers.forEach(stat => {
+            observer.observe(stat);
+        });
+        
+        // Bouncing balls animation with collisions
+        const bouncingBalls = document.querySelector('.bouncing-balls');
+        const colors = ['var(--brown-dark)', 'var(--beige-warm)', 'var(--olive-green)', 'var(--brown-medium)', 'var(--orange-toasted)'];
+        const BALL_SPEED = 3;
+        const balls = [];
+        
+        // Create balls with random properties
+        for (let i = 0; i < 5; i++) {
+            const ball = document.createElement('div');
+            ball.classList.add('ball');
+            
+            // Random size between 40px and 80px
+            const size = Math.floor(Math.random() * 110) + 40;
+            
+            // Apply styles
+            ball.style.width = `${size}px`;
+            ball.style.height = `${size}px`;
+            ball.style.backgroundColor = colors[i % colors.length];
+            ball.style.opacity = '0.15';
+            
+            // Store ball data
+            balls.push({
+                element: ball,
+                x: Math.random() * (window.innerWidth - size),
+                y: Math.random() * (window.innerHeight - size),
+                vx: (Math.random() - 0.5) * 4,
+                vy: (Math.random() - 0.5) * 4,
+                size: size
+            });
+            
+            // normalizar velocidad inicial
+            normalizeVelocity(balls[balls.length - 1], BALL_SPEED);
+
+            bouncingBalls.appendChild(ball);
+        }
+        
+        // Collision detection between balls
+        function checkBallCollisions() {
+            for (let i = 0; i < balls.length; i++) {
+                for (let j = i + 1; j < balls.length; j++) {
+                    const ball1 = balls[i];
+                    const ball2 = balls[j];
+                    
+                    const dx = ball1.x - ball2.x;
+                    const dy = ball1.y - ball2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Check if balls are colliding
+                    if (distance < ball1.size/2 + ball2.size/2) {
+                        // Calculate collision angle
+                        const angle = Math.atan2(dy, dx);
+                        
+                        // Calculate velocities in rotated coordinate system
+                        const sin = Math.sin(angle);
+                        const cos = Math.cos(angle);
+                        
+                        // Rotate ball1's velocity
+                        const vx1 = ball1.vx * cos + ball1.vy * sin;
+                        const vy1 = ball1.vy * cos - ball1.vx * sin;
+                        
+                        // Rotate ball2's velocity
+                        const vx2 = ball2.vx * cos + ball2.vy * sin;
+                        const vy2 = ball2.vy * cos - ball2.vx * sin;
+                        
+                        // Swap x-velocities (elastic collision)
+                        const finalVx1 = vx2;
+                        const finalVx2 = vx1;
+                        const finalVy1 = vy1;
+                        const finalVy2 = vy2;
+                        
+                        // Rotate velocities back
+                        ball1.vx = finalVx1 * cos - finalVy1 * sin;
+                        ball1.vy = finalVy1 * cos + finalVx1 * sin;
+                        ball2.vx = finalVx2 * cos - finalVy2 * sin;
+                        ball2.vy = finalVy2 * cos + finalVx2 * sin;
+                        
+                        // Prevent balls from sticking together
+                        const overlap = (ball1.size/2 + ball2.size/2) - distance + 1;
+                        ball1.x += overlap * Math.cos(angle);
+                        ball1.y += overlap * Math.sin(angle);
+
+                        // Normalizar tras colisiones
+                        normalizeVelocity(ball1, BALL_SPEED);
+                        normalizeVelocity(ball2, BALL_SPEED);
+                    }
+                }
+            }
+        }
+        
+        // Normaliza la velocidad de una bola a una magnitud constante
+        function normalizeVelocity(ball, speed) {
+            const length = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
+            if (length > 0) {
+                ball.vx = (ball.vx / length) * speed;
+                ball.vy = (ball.vy / length) * speed;
+            }
+        }
+
+        // Animation loop for bouncing balls with collisions
+        function animateBalls() {
+            const container = document.querySelector('.testimonials');
+            const containerRect = container.getBoundingClientRect();
+            
+            // Check for collisions between balls
+            checkBallCollisions();
+            
+            balls.forEach(ball => {
+                // Update position
+                ball.x += ball.vx;
+                ball.y += ball.vy;
+                
+                // Container boundaries with bounce
+                if (ball.x <= containerRect.left) {
+                    ball.vx = Math.abs(ball.vx); // Bounce right
+                    ball.x = containerRect.left;
+                }
+                if (ball.x + ball.size >= containerRect.right) {
+                    ball.vx = -Math.abs(ball.vx); // Bounce left
+                    ball.x = containerRect.right - ball.size;
+                }
+                if (ball.y <= containerRect.top) {
+                    ball.vy = Math.abs(ball.vy); // Bounce down
+                    ball.y = containerRect.top;
+                }
+                if (ball.y + ball.size >= containerRect.bottom) {
+                    ball.vy = -Math.abs(ball.vy); // Bounce up
+                    ball.y = containerRect.bottom - ball.size;
+                }
+                
+                // Update position
+                ball.element.style.left = `${ball.x - containerRect.left}px`;
+                ball.element.style.top = `${ball.y - containerRect.top}px`;
+            });
+            
+            requestAnimationFrame(animateBalls);
+        }
+        
+        // Start animation
+        animateBalls();
+    </script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Dimelo - Plantillas de Diseño</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #50C07E 0%, #6cc24a 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #FFFCF6;
+        }
+        
+        header h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .template-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .template-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .template-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+        }
+        
+        .template-img i {
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.8);
+            z-index: 1;
+        }
+        
+        .propuesta1 .template-img {
+            background: linear-gradient(135deg, #00A36C 0%, #6DBE45 100%);
+        }
+        
+        .propuesta2 .template-img {
+            background: linear-gradient(135deg, #68482A 0%, #BE9563 100%);
+        }
+        
+        .propuesta3 .template-img {
+            background: linear-gradient(135deg, #4C8082 0%, #50C07E 100%);
+        }
+        
+        .propuesta-final .template-img {
+            background: linear-gradient(135deg, #50C07E 0%, #ED8F36 100%);
+        }
+        
+        .template-content {
+            padding: 25px;
+        }
+        
+        .template-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .template-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #50C07E;
+        }
+        
+        .template-content p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: #50C07E;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #3da86a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(80, 192, 126, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #ED8F36;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #d37d2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(237, 143, 54, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #252825;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: #50C07E;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://i.imgur.com/7v5sZ1X.png" alt="Fundación Dimelo Logo">
+                <h1>Fundación <span>Dimelo</span></h1>
+            </div>
+            <h2>Plantillas de Diseño para el Sitio Web</h2>
+        </header>
+        
+        <div class="templates-grid">
+            <div class="template-card propuesta1">
+                <div class="template-img">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="template-content">
+                    <h3>Propuesta 1</h3>
+                    <p>Diseño verde fresco con tonos naturales. Paleta basada en verdes y grises claros para transmitir crecimiento y bienestar emocional.</p>
+                    <a href="propuesta1.html" class="btn btn-primary">Ver Plantilla</a>
+                </div>
+            </div>
+            
+            <div class="template-card propuesta2">
+                <div class="template-img">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="template-content">
+                    <h3>Propuesta 2</h3>
+                    <p>Diseño cálido con tonos tierra. Paleta de marrones y beiges que transmite estabilidad y confianza para los usuarios.</p>
+                    <a href="propuesta2.html" class="btn btn-primary">Ver Plantilla</a>
+                </div>
+            </div>
+            
+            <div class="template-card propuesta3">
+                <div class="template-img">
+                    <i class="fas fa-water"></i>
+                </div>
+                <div class="template-content">
+                    <h3>Propuesta 3</h3>
+                    <p>Diseño moderno con colores vibrantes. Combinación de verdes, azules y naranjas para un aspecto contemporáneo y energético.</p>
+                    <a href="propuesta3.html" class="btn btn-primary">Ver Plantilla</a>
+                </div>
+            </div>
+            
+            <div class="template-card propuesta-final">
+                <div class="template-img">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="template-content">
+                    <h3>Propuesta 4</h3>
+                    <p>Combinación profesional de las mejores características. Diseño equilibrado que integra elementos de todas las propuestas anteriores.</p>
+                    <a href="fundaciondimelo.html" class="btn btn-secondary">Ver Plantilla</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Fundación Dimelo - Brindando apoyo psicológico profesional desde 2011</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2023 Fundación Dimelo. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
